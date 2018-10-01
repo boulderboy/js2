@@ -15,12 +15,15 @@
         var item3 = new MenuItem('item3', 'Three', '/3');
         var item5 = new MenuItem('underItem1', '3.1', '/3.1');
         var item6 = new MenuItem('underItem2', '3.2', '/3.2');
-        var item4 = new Menu('nope','yes', [item5, item6]);
+        var subMenu = new SubMenu('nope','yes', [item5, item6]);
 
-        var menu = new Menu('menu', 'menu', [item1, item2, item3, item4]);
+        var menu = new Menu('menu', 'menu', [item1, item2, item3, subMenu]);
+
 
         document.getElementById('container').appendChild(menu.render());
-        Container.prototype.remove('123');
+        // document.getElementById('123').appendChild(subMenu.render());
+
+        // menu.remove('item');
 
     </script>
 

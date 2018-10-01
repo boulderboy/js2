@@ -31,7 +31,11 @@ Menu.prototype.render = function () {
     var ul = document.createElement('ul');
 
     this.items.forEach(function (item) {
-        if (item instanceof Container) {
+        if(item instanceof SubMenu) {
+            var li = document.createElement('li');
+            li.appendChild(item.render());
+            ul.appendChild(li);
+        } else if (item instanceof Container) {
             ul.appendChild(item.render());
         }
     });
@@ -40,7 +44,15 @@ Menu.prototype.render = function () {
 
 function SubMenu(id, className, items){
     Menu.call(this, id, className, items);
-};
+}
+
+SubMenu.prototype = Object.create(Menu.prototype);
+
+// SubMenu.prototype.render = function () {
+//
+// }
+
+
 
 function MenuItem(className, title, href) {
     Container.call(this, null, className, 'li');
