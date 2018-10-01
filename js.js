@@ -38,20 +38,10 @@ Menu.prototype.render = function () {
     return ul;
 };
 
-function SuperMenu(id, className, items) {
+function SubMenu(id, className, items){
     Menu.call(this, id, className, items);
-}
+};
 
-// SuperMenu.prototype = Object.create(Menu.prototype);
-// SuperMenu.prototype.render = function () {
-//     var ul = document.createElement('ul');
-//     this.items.forEach(function (item) {
-//         if(item instanceof Menu){
-//
-//         }
-//     })
-//     //TODO: ДОДЕЛАТЬ RENDER
-// };
 function MenuItem(className, title, href) {
     Container.call(this, null, className, 'li');
     this.title = title;
