@@ -12,13 +12,13 @@ function Hamburger(size, stuffing) {
     this.toppings = [];
 }
 /* Размеры, виды начинок и добавок */
-Hamburger.SIZE_SMALL = null;
-Hamburger.SIZE_LARGE = null;
-Hamburger.STUFFING_CHEESE = null;
-Hamburger.STUFFING_SALAD = null;
-Hamburger.STUFFING_POTATO = null;
-Hamburger.TOPPING_MAYO = null;
-Hamburger.TOPPING_SPICE = null;
+Hamburger.SIZE_SMALL = 'small';
+Hamburger.SIZE_LARGE = 'large';
+Hamburger.STUFFING_CHEESE = 'cheese';
+Hamburger.STUFFING_SALAD = 'salad';
+Hamburger.STUFFING_POTATO = 'potato';
+Hamburger.TOPPING_MAYO = 'mayo';
+Hamburger.TOPPING_SPICE = 'spice';
 /**
  * Добавить добавку к гамбургеру. Можно добавить несколько
  *– при условии, что они разные.
@@ -36,10 +36,14 @@ Hamburger.prototype.addTopping = function (_topping) {
  * @param topping   Тип добавки
  * @throws {HamburgerException}  При неправильном использовании
  */
-Hamburger.prototype.removeTopping = function (topping) {
-  if (Hamburger.hasOwnProperty(['toppings'])){
-      console.log(this.toppings);
-  }
+Hamburger.prototype.removeTopping = function (removingTopping) {
+    var i = 0;
+    this.toppings.forEach(function (topping) {
+        if(topping === removingTopping){
+            this.toppings.splice(i, 1);
+        }
+        i++;
+    })
 };
  /**
   * Получить список добавок.
