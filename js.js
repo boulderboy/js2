@@ -18,8 +18,7 @@ Container.prototype.remove = function (elementId) {
     var element = document.getElementById(elementId);
     var parentElement = element.parentElement;
     parentElement.removeChild(element);
-}
-;
+};
 
 function Menu(id, className, items) {
     Container.call(this, id, className, 'ul');
@@ -61,7 +60,7 @@ function MenuItem(className, title, href) {
 }
 
 MenuItem.prototype = Object.create(Container.prototype);
-MenuItem.prototype.render = function () {
+MenuItem.prototype.render = function (id) {
     var li = document.createElement('li');
     var link = document.createElement('a');
     link.href = this.href;
