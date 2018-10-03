@@ -18,8 +18,7 @@ Container.prototype.remove = function (elementId) {
     var element = document.getElementById(elementId);
     var parentElement = element.parentElement;
     parentElement.removeChild(element);
-}
-;
+};
 
 function Menu(id, className, items) {
     Container.call(this, id, className, 'ul');
@@ -31,27 +30,29 @@ Menu.prototype.render = function () {
     var ul = document.createElement('ul');
 
     this.items.forEach(function (item) {
-        if (item instanceof Container) {
+        if(item instanceof SubMenu) {
+            var li = document.createElement('li');
+            li.appendChild(item.render());
+            ul.appendChild(li);
+        } else if (item instanceof Container) {
             ul.appendChild(item.render());
         }
     });
     return ul;
 };
 
-function SuperMenu(id, className, items) {
+function SubMenu(id, className, items){
     Menu.call(this, id, className, items);
 }
 
-// SuperMenu.prototype = Object.create(Menu.prototype);
-// SuperMenu.prototype.render = function () {
-//     var ul = document.createElement('ul');
-//     this.items.forEach(function (item) {
-//         if(item instanceof Menu){
+SubMenu.prototype = Object.create(Menu.prototype);
+
+// SubMenu.prototype.render = function () {
 //
-//         }
-//     })
-//     //TODO: ДОДЕЛАТЬ RENDER
-// };
+// }
+
+
+
 function MenuItem(className, title, href) {
     Container.call(this, null, className, 'li');
     this.title = title;
@@ -59,7 +60,7 @@ function MenuItem(className, title, href) {
 }
 
 MenuItem.prototype = Object.create(Container.prototype);
-MenuItem.prototype.render = function () {
+MenuItem.prototype.render = function (id) {
     var li = document.createElement('li');
     var link = document.createElement('a');
     link.href = this.href;
@@ -69,3 +70,4 @@ MenuItem.prototype.render = function () {
 
     return li;
 };
+
