@@ -1,0 +1,22 @@
+{
+  "reviews": [
+    {
+      "text": "asdf",
+      "name": "asdf",
+      "approved": "1",
+      "id": "2"
+    },
+    {
+      "text": "qweq",
+      "name": "yyyyy",
+      "approved": "1",
+      "id": "4"
+    }
+  ],
+  "passwords": [
+    {
+      "login": "admin",
+      "password": "admin"
+    }
+  ]
+}
