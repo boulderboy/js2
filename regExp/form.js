@@ -8,7 +8,7 @@ sendButton.addEventListener("click", function (event) {
     var eMail = document.querySelector('#e-mail').value;
     var text = document.querySelector('#text').value;
     var nameRegExp = /^[a-zA-Zа-яА-Я']+\s?[a-zA-Zа-яА-Я']+$/u;
-    var phoneRegExp = /^\+\d{1,5}\(\d{3}\)\d{3}-\d{4}$/;
+    var phoneRegExp = /^\+\d{1,5}\(\d{3}\)-\d{3}\s\d{4}$/;
     var eMailRegExp = /^[\w\.\-]+\@{1}\w+\.[a-z]+/;
     var textRegExp = /[\w\s]{15,}/;
 
@@ -46,7 +46,7 @@ function notValidRender(id, text) {
         errorTextContainer.textContent = errorText;
         holder.parentElement.appendChild(errorTextContainer);
     }
-};
+}
 
 function validRender(id) {
     var element = document.querySelector(`#${id}`);
@@ -65,3 +65,4 @@ function validRender(id) {
     textContainer.textContent = 'OK';
 
 }
+
