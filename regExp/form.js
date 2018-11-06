@@ -32,13 +32,23 @@ sendButton.addEventListener("click", function (event) {
     } else {
         validRender('text');
     }
-
+    jQuery('.shake').effect('shake');
+    if(jQuery('.is-invalid').length){
+        var $dialog = jQuery('<div />').attr('id', 'dialog').attr('title', 'Errors');
+        jQuery('.invalid-feedback').each(function (i, val) {
+            console.log(val.previousElementSibling);
+            var errorText = jQuery('<p />').text(val.textContent);
+            $dialog.append(errorText);
+        });
+        jQuery('#container').append($dialog);
+        $dialog.dialog();
+    }
 });
 
 function notValidRender(id, text) {
     if(!document.querySelector(`#${id}`).classList.contains('is-invalid')){
         var holder = document.querySelector(`#${id}`);
-        holder.classList.add('is-invalid', 'form-control');
+        holder.classList.add('is-invalid', 'form-control', 'shake');
         var errorText = text;
         var errorTextContainer = document.createElement('div');
         errorTextContainer.classList.add('invalid-feedback');
@@ -51,7 +61,7 @@ function notValidRender(id, text) {
 function validRender(id) {
     var element = document.querySelector(`#${id}`);
     if(element.classList.contains('is-invalid')){
-       element.classList.remove('is-invalid');
+       element.classList.remove('is-invalid', 'shake');
     }
     element.classList.add('form-control', 'is-valid');
     if(!element.parentElement.querySelector('.invalid-feedback')){
@@ -63,6 +73,15 @@ function validRender(id) {
     textContainer.classList.remove('invalid-feedback');
     textContainer.classList.add('valid-feedback');
     textContainer.textContent = 'OK';
-
 }
 
+jQuery('#date-of-birth').datepicker({
+    dayNamesMin:['ВС','ПН',"ВТ", "СР", "ЧТ", "ПТ", "СБ"],
+    monthNames: ['Январь', 'Февраль', "Март", "Апрель", "Май", "Июнь", "Июль", "Август",
+        "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"],
+    firstDay: 1,
+    dateFormat: 'dd-mm-yy',
+    defaultDate: '-18y',
+    yearRange: '1900:2020',
+    changeYear: true,
+});
