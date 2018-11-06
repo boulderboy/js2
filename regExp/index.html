@@ -5,6 +5,7 @@
     <title>Title</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 </head>
 <body>
 <div class="text p-3">
@@ -57,7 +58,7 @@
     The officer flourished his arm and hastily rode away.
     'It's all the fault of these fellows on the staff that there's this disorder,' he muttered. 'Do as you like.'
 </div>
-<div class="container">
+<div class="container" id="container">
     <div class="row">
         <div class="col-4">
             <form class="mt-3">
@@ -76,6 +77,7 @@
                 <div class="form-group">
                     <label for="text">Additional Info</label>
                     <input type="text" class="form-control" id="text" placeholder="min 15 char">
+                    <div id="test" style="width: 10px; height: 10px; background-color: red;"></div>
                 </div>
                 <div class="form-group">
                     <label for="autocomplete">City autofill</label>
@@ -87,6 +89,11 @@
                         <option value="none">Select city</option>
                     </select>
                 </div>
+                <div class="form-group">
+                    <p>Date of birth</p>
+                    <input type="text" id="date-of-birth">
+                </div>
+
                 <button type="submit" class="btn btn-primary btn-lg">Send</button>
             </form>
         </div>
@@ -94,9 +101,10 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="jquery.autocomplete.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script src="js.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>-->
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>-->
 <script src="form.js"></script>
 <script src="city.js"></script>
 
