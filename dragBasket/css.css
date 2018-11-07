@@ -1,0 +1,12 @@
+.container{
+    display: flex;
+    flex-direction: column;
+}
+.goods{
+    display: flex;
+}
+.basket{
+    width: 100%;
+    min-height: 500px;
+    background-color: antiquewhite;
+}
