@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div class="goods">
+        <div class="card draggable" style="width: 18rem;" data-item="phone" data-price="500">
+            <img class="card-img-top" src="img/1.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Phone</h5>
+            </div>
+        </div>
+        <div class="card draggable" style="width: 18rem;" data-item="screen protector" data-price="100">
+            <img class="card-img-top" src="img/2.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Screenprotector</h5>
+            </div>
+        </div>
+        <div class="card draggable" style="width: 18rem;" data-item="phone case" data-price="200">
+            <img class="card-img-top" src="img/3.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Phone case</h5>
+            </div>
+        </div>
+    </div>
+    <div class="basket droppable">
+        <h3>BASKET</h3>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="draggable.js"></script>
+</body>
+</html>
