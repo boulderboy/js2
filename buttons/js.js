@@ -6,7 +6,7 @@ $buttons.forEach(function ($button) {
     $button.addEventListener("click", function(event) {
 
         var $xhr = new XMLHttpRequest();
-        $xhr.open('GET', 'http://127.0.0.1:8080/'+ event.srcElement.dataset.status + '.json');
+        $xhr.open('GET', 'http://127.0.0.1:8080/'+ event.target.dataset.status + '.json');
         $xhr.send();
 
         $xhr.onreadystatechange = function (){
