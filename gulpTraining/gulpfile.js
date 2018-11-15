@@ -7,10 +7,19 @@ var gulpautoprefixer = require('gulp-autoprefixer');
 var browserSync = require('browser-sync');
 var uglify = require('gulp-uglify');
 var pump = require('pump');
+var babel = require('gulp-babel');
+
+gulp.task('js', function () {
+    return gulp.src('./src/js/*.js')
+        .pipe(babel({
+            presets: ['env']
+        }))
+        .pipe(gulp.dest(`src/js/cross`))
+});
 
 gulp.task('compress', function (cb) {
     pump([
-            gulp.src('src/js/*.js'),
+            gulp.src('src/js/cross/*.js'),
             uglify(),
             gulp.dest('src/js/minijs')
         ],
